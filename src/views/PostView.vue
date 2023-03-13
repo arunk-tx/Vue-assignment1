@@ -2,7 +2,8 @@
   <div class="ui cards" style="margin: 10px">
     <div class="ui icon input" style="width: 100%">
       <input type="text" placeholder="Search..." v-model="searchQuery" />
-      <button @click="sortd">sort</button>
+      <button v-if="toggler" @click="sortd">sort A-Z</button>
+      <button v-else @click="sortd">sort Z-A</button>
       <i class="search icon"></i>
     </div>
     
@@ -30,7 +31,7 @@ import { useStore } from "vuex";
 const store = useStore();
 const searchQuery = ref("");
 
-const toggler = ref(false)
+const toggler = ref(true)
 store.dispatch("getPosts");
 const searchedPosts = computed(() => {
     return posts.value.filter((post) => {
