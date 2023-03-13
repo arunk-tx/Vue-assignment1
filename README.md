@@ -26,3 +26,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Docker
 docker run -it -p 8080:80  --name vuejs-assignment arunkumar42/vue-assignment1:latest
 
+
+
+### Json Server
+json-server --watch data/db.json

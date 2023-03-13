@@ -1,0 +1,37 @@
+{
+    "posts": [
+      {
+        "id": "item-1",
+        "author_name": "John Adams",
+        "author_avatar": "https://tx-resources.s3.us-east-2.amazonaws.com/sm-profile.png",
+        "description": "Party images from New Jersey",
+        "asset_type": "image",
+        "thumbnail_url": "",
+        "created_at": "Created 3 days ago",
+        "updated_at": "",
+        "image_url": "https://tx-resources.s3.us-east-2.amazonaws.com/sample-image.jpg"
+      },
+      {
+        "id": "item-2",
+        "author_name": "Willliam Adams",
+        "author_avatar": "https://tx-resources.s3.us-east-2.amazonaws.com/sm-profile.png",
+        "description": "No description",
+        "asset_type": "image",
+        "thumbnail_url": "",
+        "created_at": "Created 5 days ago",
+        "updated_at": "",
+        "image_url": "https://tx-resources.s3.us-east-2.amazonaws.com/sample-image.jpg"
+      },
+      {
+        "id": "item-3",
+        "author_name": "Sean Rock",
+        "author_avatar": "https://tx-resources.s3.us-east-2.amazonaws.com/sm-profile.png",
+        "description": "lorem ipsum from New Jersey",
+        "asset_type": "image",
+        "thumbnail_url": "",
+        "created_at": "Created 10 days ago",
+        "updated_at": "",
+        "image_url": "https://tx-resources.s3.us-east-2.amazonaws.com/sample-image.jpg"
+      }
+    ]
+  }
