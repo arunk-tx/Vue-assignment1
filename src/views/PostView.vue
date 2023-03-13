@@ -2,6 +2,7 @@
   <div class="ui cards" style="margin: 10px">
     <div class="ui icon input" style="width: 100%">
       <input type="text" placeholder="Search..." v-model="searchQuery" />
+      <button @click="sortd">sort</button>
       <i class="search icon"></i>
     </div>
     
@@ -29,6 +30,7 @@ import { useStore } from "vuex";
 const store = useStore();
 const searchQuery = ref("");
 
+const toggler = ref(false)
 store.dispatch("getPosts");
 const searchedPosts = computed(() => {
     return posts.value.filter((post) => {
@@ -43,4 +45,16 @@ const searchedPosts = computed(() => {
 const posts = computed(() => {
     return store.getters.getPosts;
 });
+function sortd() {
+    toggler.value = !toggler.value
+    //console.log("enter", posts)
+    const sorted = posts.value.sort((a, b) => {
+        return a.author_name.localeCompare(b.author_name);
+    })
+    if(toggler.value){
+        sorted.reverse()
+    }
+    //console.log("sorted", sorted)
+    return sorted
+}
 </script>
