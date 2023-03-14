@@ -2,12 +2,19 @@ import { createRouter, createWebHistory } from 'vue-router'
 import PostView from '../views/PostView.vue'
 import TestView from '../views/TestView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
+import PostDetailView from '../views/PostDetailView.vue'
 
 const routes = [
   {
     path: '/view-posts',
     name: 'PostViews',
     component: PostView
+  },
+  {
+    path: '/view-posts/:id',
+    name: 'PostDetailView',
+    component: PostDetailView,
+    props: true
   },
   {
     path: '/test',
