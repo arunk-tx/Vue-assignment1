@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import axios from "axios";
+import {postapi} from '@/api/api'
 
 const store = createStore({
     state:{
@@ -16,13 +16,10 @@ const store = createStore({
     actions:{
         async getPosts({ commit }) {
             try {
-              const data = await axios.get(
-                "http://localhost:3000/posts"
-              );
+              const data = await postapi.getPosts()
               commit("SET_POSTS", data.data);
             } catch (error) {
               alert(error);
-              console.log(error);
             }
         },
     }

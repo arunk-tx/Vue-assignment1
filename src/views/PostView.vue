@@ -1,61 +1,71 @@
 <template>
-  <div class="ui cards" style="margin: 10px">
-    <div class="ui icon input" style="width: 100%">
-      <input type="text" placeholder="Search..." v-model="searchQuery" />
-      <button v-if="toggler" @click="sortd">sort A-Z</button>
-      <button v-else @click="sortd">sort Z-A</button>
-      <i class="search icon"></i>
-    </div>
-    
-    <div
-      class="card ui fluid"
-      v-for="post in searchedPosts"
-      :key="post.id"
-      style="margin: 0"
-    >
-      <div class="content">
-        <img class="right floated mini ui image"  />
-        <div class="header">{{ post.id }}</div>
-        <div class="meta">
-         {{ post.author_name }} Kg 
-          
-        </div>
+  <v-app style="background-color: #eeeeee">
+    <v-container>
+      <v-row class="d-flex justify-space-between ml-0 mr-0">
+        <v-card-text >
+          <v-text-field
+            density="compact"
+            variant="solo"
+            label="Search by author"
+            append-inner-icon="mdi-magnify"
+            single-line
+            hide-details
+            v-model="searchQuery"
+          ></v-text-field>
+        </v-card-text>
+        <div class="mt-3 mr-3">
+        <v-btn v-if="toggler" @click="sortd" :rounded="0" color="primary">
+          sort A-Z
+        </v-btn>
+        <v-btn v-else @click="sortd" :rounded="0" color="primary">
+          sort Z-A
+        </v-btn>
       </div>
-    </div>
-  </div>
+      </v-row>
+      <v-row>
+        <PostList :posts="searchedPosts" />
+      </v-row>
+    </v-container>
+  </v-app>
 </template>
 
 <script setup>
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
+import PostList from "../components/PostList";
 const store = useStore();
 const searchQuery = ref("");
 
-const toggler = ref(true)
+const toggler = ref(true);
 store.dispatch("getPosts");
 const searchedPosts = computed(() => {
-    return posts.value.filter((post) => {
+  return posts.value.filter((post) => {
     return (
-        post.author_name
-        .toLowerCase()
-        .indexOf(searchQuery.value.toLowerCase()) != -1
+      post.author_name.toLowerCase().indexOf(searchQuery.value.toLowerCase()) !=
+      -1
     );
-    });
+  });
 });
 
 const posts = computed(() => {
-    return store.getters.getPosts;
+  console.log("posts data", posts);
+  return store.getters.getPosts;
 });
 function sortd() {
-    toggler.value = !toggler.value
-    //console.log("enter", posts)
-    const sorted = posts.value.sort((a, b) => {
-        return a.author_name.localeCompare(b.author_name);
-    })
-    if(toggler.value){
-        sorted.reverse()
-    }
-    //console.log("sorted", sorted)
-    return sorted
+  toggler.value = !toggler.value;
+  //console.log("enter", posts)
+  const sorted = posts.value.sort((a, b) => {
+    return a.author_name.localeCompare(b.author_name);
+  });
+  if (toggler.value) {
+    sorted.reverse();
+  }
+  //console.log("sorted", sorted)
+  return sorted;
 }
 </script>
+<style scoped>
+.v-text-field{
+  width: 300px;
+}
+</style>
