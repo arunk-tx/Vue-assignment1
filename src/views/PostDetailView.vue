@@ -1,30 +1,25 @@
 <template>
-  <h1>Detail</h1>
-  <v-app>
-    <v-main class="mt-5 ma-10">
-      <div v-if="job">
-        <h1>{{ job.author_name }}</h1>
-        <p>{{ job.description }}</p>
-      </div>
-      <div v-else>
-        <p>Loading job details...</p>
-      </div>
-    </v-main>
-  </v-app>
+  <PostDetail :post="post" />
 </template>
   
-  <script setup>
-import { ref, onMounted, defineProps } from "vue";
-const job = ref(null);
+<script setup>
+import { computed, defineProps, ref } from "vue";
+import PostDetail from "../components/PostDetail";
+import { postapi } from "@/api/api";
+
 const props = defineProps(["id"]);
-onMounted(() => {
-  console.log(`the component is now mounted.`);
-  fetch("http://localhost:3000/posts/" + props.id)
-    .then((res) => res.json())
-    .then((data) => (job.value = data))
-    .catch((err) => console.log(err.message));
+const resp = ref(null);
+const fetch = async () => {
+  const data = await postapi.getPostsById(props.id);
+  resp.value = data.data;
+};
+
+if (resp.value == null) fetch();
+const post = computed(() => {
+  return resp.value;
 });
+console.log("hloooo");
 </script>
   
-  <style>
+<style>
 </style>

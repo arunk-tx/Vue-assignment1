@@ -4,6 +4,7 @@ import TestView from '../views/TestView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 import PostDetailView from '../views/PostDetailView.vue'
 import HomepageView from '../views/HomePageView.vue'
+import AddPostView from '../views/AddPostView'
 
 const routes = [
   {
@@ -21,6 +22,11 @@ const routes = [
     name: 'PostDetailView',
     component: PostDetailView,
     props: true
+  },
+  {
+    path: "/add-post",
+    name: "AddPost",
+    component: AddPostView,
   },
   {
     path: '/test',

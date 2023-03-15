@@ -14,6 +14,9 @@
           ></v-text-field>
         </v-card-text>
         <div class="mt-3 mr-3">
+          <v-btn class="mx-2" :to="{ name: 'AddPost' }" :rounded="0" color="primary">
+            Add Post
+          </v-btn>
           <v-btn v-if="toggler" @click="sortd" :rounded="0" color="primary">
             sort A-Z
           </v-btn>

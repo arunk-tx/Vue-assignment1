@@ -1,16 +1,16 @@
 <template>
   <v-card
-    class="mx-auto"
-    max-width="344"
-    height=""
-    :to="{ name: 'PostDetailView', params: { id: post.id } }"
+    class="ma-10"
+    max-width="90%"
   >
+  <h2 style="text-align: center;">Details</h2>
     <v-card-actions>
       <v-list-item class="w-100">
         <template v-slot:prepend>
           <v-avatar
             color="grey-darken-3"
             :image="post.author_avatar"
+            size="100"
           ></v-avatar>
         </template>
         <v-list-item-title>{{ post.author_name }}</v-list-item-title>
@@ -20,21 +20,25 @@
     <v-card-text>
       {{ post.description }}
     </v-card-text>
+    <v-card-text>
+      Asset type: {{post.asset_type}}
+    </v-card-text>
+    <v-card-text>
+      Updated at {{post.updated_at}}
+    </v-card-text>
     <v-img
       v-if="post.image_url"
       :src="post.image_url"
       height="200px"
       cover
     ></v-img>
-    
   </v-card>
-  
 </template>
-<script setup>
+  <script setup>
 import { defineProps } from "vue";
 defineProps(["post"]);
 </script>
-<style scoped>
+  <style scoped>
 .v-list-item-subtitle {
   font-size: 12px;
 }
@@ -42,3 +46,4 @@ defineProps(["post"]);
   border-radius: 12px;
 }
 </style>
+  
