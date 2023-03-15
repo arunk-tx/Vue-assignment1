@@ -2,7 +2,7 @@
   <v-app style="background-color: #eeeeee">
     <v-container>
       <v-row class="d-flex justify-space-between ml-0 mr-0">
-        <v-card-text >
+        <v-card-text>
           <v-text-field
             density="compact"
             variant="solo"
@@ -14,13 +14,13 @@
           ></v-text-field>
         </v-card-text>
         <div class="mt-3 mr-3">
-        <v-btn v-if="toggler" @click="sortd" :rounded="0" color="primary">
-          sort A-Z
-        </v-btn>
-        <v-btn v-else @click="sortd" :rounded="0" color="primary">
-          sort Z-A
-        </v-btn>
-      </div>
+          <v-btn v-if="toggler" @click="sortd" :rounded="0" color="primary">
+            sort A-Z
+          </v-btn>
+          <v-btn v-else @click="sortd" :rounded="0" color="primary">
+            sort Z-A
+          </v-btn>
+        </div>
       </v-row>
       <v-row>
         <PostList :posts="searchedPosts" />
@@ -65,7 +65,7 @@ function sortd() {
 }
 </script>
 <style scoped>
-.v-text-field{
+.v-text-field {
   width: 300px;
 }
 </style>

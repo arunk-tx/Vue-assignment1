@@ -3,8 +3,14 @@ import PostView from '../views/PostView.vue'
 import TestView from '../views/TestView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 import PostDetailView from '../views/PostDetailView.vue'
+import HomepageView from '../views/HomePageView.vue'
 
 const routes = [
+  {
+    path: '/',
+    name: 'HomePage',
+    component: HomepageView
+  },
   {
     path: '/view-posts',
     name: 'PostViews',

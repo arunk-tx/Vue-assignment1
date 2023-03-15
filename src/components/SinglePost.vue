@@ -1,5 +1,10 @@
 <template>
-  <v-card class="mx-auto" max-width="344" height="" :to="{name: 'PostDetailView', params: { id: post.id }}">
+  <v-card
+    class="mx-auto"
+    max-width="344"
+    height=""
+    :to="{ name: 'PostDetailView', params: { id: post.id } }"
+  >
     <v-card-actions>
       <v-list-item class="w-100">
         <template v-slot:prepend>
@@ -29,9 +34,9 @@ defineProps(["post"]);
 </script>
 <style scoped>
 .v-list-item-subtitle {
-    font-size: 12px;
+  font-size: 12px;
 }
 .v-card {
-    border-radius: 12px;
+  border-radius: 12px;
 }
 </style>
