@@ -1,4 +1,5 @@
 <template>
+  
     <v-row justify="center">
       <v-dialog
         v-model="dialog"
@@ -7,10 +8,10 @@
       >
         <template v-slot:activator="{ props }">
           <v-btn
-            color="primary"
+            color="red"
             v-bind="props"
           >
-            Open Dialog
+            Delete
           </v-btn>
         </template>
         <v-card>
@@ -30,7 +31,7 @@
             <v-btn
               color="green-darken-1"
               variant="text"
-              @click="dialog = false"
+              @click="deleteConfirm"
             >
               Delete
             </v-btn>
@@ -40,6 +41,14 @@
     </v-row>
   </template>
   <script setup>
-  import { ref } from "vue"
+  import { ref, defineEmits } from "vue"
   const dialog = ref(false)
+  const emit = defineEmits(['deleteClicked'])
+
+  const deleteConfirm = () => {
+    console.log("clicked delete")
+    dialog.value = false
+    emit('deleteClicked')
+    //console.log("emits", emits)
+  }
 </script>

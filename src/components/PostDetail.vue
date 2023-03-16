@@ -32,11 +32,28 @@
       height="200px"
       cover
     ></v-img>
+    
+  
+    <v-card-text>
+    <ConfirmDelete @deleteClicked="deleteConfirm"></ConfirmDelete>
+  </v-card-text>
   </v-card>
 </template>
   <script setup>
 import { defineProps } from "vue";
-defineProps(["post"]);
+import ConfirmDelete from './ConfirmDelete'
+import { postapi } from "@/api/api";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const post = defineProps(["post"]);
+
+const deleteConfirm = async () => {
+  const data = await postapi.deletePostById(post.post.id);
+  console.log("repsonse", data.data)
+  router.push("/view-posts");
+
+}
 </script>
   <style scoped>
 .v-list-item-subtitle {

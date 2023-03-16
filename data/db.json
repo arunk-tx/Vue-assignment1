@@ -142,39 +142,6 @@
       "created_at": "Created 35 days ago",
       "updated_at": "",
       "image_url": "https://tx-resources.s3.us-east-2.amazonaws.com/sample-image.jpg"
-    },
-    {
-      "author_name": "tab",
-      "author_avatar": "",
-      "description": "sadsaf fdsfsdf",
-      "asset_type": "",
-      "thumbnail_url": "",
-      "created_at": "",
-      "updated_at": "",
-      "image_url": "",
-      "id": "1S9bEM_"
-    },
-    {
-      "author_name": "dsds",
-      "author_avatar": "dsds",
-      "description": "gggrg",
-      "asset_type": "",
-      "thumbnail_url": "",
-      "created_at": "",
-      "updated_at": "",
-      "image_url": "",
-      "id": "lbmYA7l"
-    },
-    {
-      "author_name": "mone",
-      "author_avatar": "no av",
-      "description": "abcdefg",
-      "asset_type": "",
-      "thumbnail_url": "",
-      "created_at": "",
-      "updated_at": "",
-      "image_url": "",
-      "id": "vvMUsVq"
     }
   ]
 }
