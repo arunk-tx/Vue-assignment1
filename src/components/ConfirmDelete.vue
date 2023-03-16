@@ -10,6 +10,7 @@
           <v-btn
             color="red"
             v-bind="props"
+            class="ma-5"
           >
             Delete
           </v-btn>

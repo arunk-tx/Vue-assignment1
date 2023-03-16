@@ -142,6 +142,17 @@
       "created_at": "Created 35 days ago",
       "updated_at": "",
       "image_url": "https://tx-resources.s3.us-east-2.amazonaws.com/sample-image.jpg"
+    },
+    {
+      "author_name": "abcdefg",
+      "author_avatar": "adsfdf",
+      "description": "test tets sasasasas",
+      "asset_type": "",
+      "thumbnail_url": "",
+      "created_at": "",
+      "updated_at": "",
+      "image_url": "",
+      "id": "1B371ha"
     }
   ]
 }
