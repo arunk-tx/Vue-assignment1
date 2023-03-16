@@ -21,11 +21,12 @@ const addNewPost = () => {
 </script>
  
 <template>
-    <v-card class=""
-    max-width="100%">
-  <div class="container mt-4 w-50">
+    <v-card class="container ma-10 text-center "
+    width="80%"
+    >
+  <div class="container mt-4">
     <form @submit.prevent="addNewPost" width="100%">
-      <legend>Add New Post</legend>
+      <h2>Add New Post</h2>
       <div class="mb-3">
         <v-text-field
       v-model="newPost.author_name"
@@ -50,7 +51,7 @@ const addNewPost = () => {
     ></v-text-field>
         
       </div>
-      <v-btn type="submit" class="btn ma-auto" color="primary">Add</v-btn>
+      <v-btn type="submit" class="btn ma-10" color="primary">Add</v-btn>
     </form>
   </div>
 </v-card>

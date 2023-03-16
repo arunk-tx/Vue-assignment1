@@ -12,6 +12,7 @@ const resp = ref(null);
 const fetch = async () => {
   const data = await postapi.getPostsById(props.id);
   resp.value = data.data;
+  console.log("fetch resp", resp.value)
 };
 
 if (resp.value == null) fetch();

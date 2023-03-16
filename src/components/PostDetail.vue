@@ -9,26 +9,26 @@
         <template v-slot:prepend>
           <v-avatar
             color="grey-darken-3"
-            :image="post.author_avatar"
+            :image="post.post.author_avatar"
             size="100"
           ></v-avatar>
         </template>
-        <v-list-item-title>{{ post.author_name }}</v-list-item-title>
-        <v-list-item-subtitle>{{ post.created_at }}</v-list-item-subtitle>
+        <v-list-item-title>{{ post.post.author_name }}</v-list-item-title>
+        <v-list-item-subtitle>{{ post.post.created_at }}</v-list-item-subtitle>
       </v-list-item>
     </v-card-actions>
     <v-card-text>
-      {{ post.description }}
+      {{ post.post.description }}
     </v-card-text>
     <v-card-text>
-      Asset type: {{post.asset_type}}
+      Asset type: {{post.post.asset_type}}
     </v-card-text>
     <v-card-text>
-      Updated at {{post.updated_at}}
+      Updated at {{post.post.updated_at}}
     </v-card-text>
     <v-img
-      v-if="post.image_url"
-      :src="post.image_url"
+      v-if="post.post.image_url"
+      :src="post.post.image_url"
       height="200px"
       cover
     ></v-img>
