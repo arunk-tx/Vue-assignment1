@@ -22,5 +22,4 @@ const post = computed(() => {
 console.log("hloooo");
 </script>
   
-<style>
-</style>
+<style></style>

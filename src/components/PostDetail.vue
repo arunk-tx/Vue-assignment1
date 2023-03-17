@@ -1,17 +1,10 @@
 <template>
-  <v-card
-    class="ma-10"
-    max-width="90%"
-  >
-  <h2 style="text-align: center;">Details</h2>
+  <v-card class="ma-10" max-width="90%">
+    <h2 style="text-align: center;">Details</h2>
     <v-card-actions>
       <v-list-item class="w-100">
         <template v-slot:prepend>
-          <v-avatar
-            color="grey-darken-3"
-            :image="post.post.author_avatar"
-            size="100"
-          ></v-avatar>
+          <v-avatar color="grey-darken-3" :image="post.post.author_avatar" size="100"></v-avatar>
         </template>
         <v-list-item-title>{{ post.post.author_name }}</v-list-item-title>
         <v-list-item-subtitle>{{ post.post.created_at }}</v-list-item-subtitle>
@@ -21,25 +14,20 @@
       {{ post.post.description }}
     </v-card-text>
     <v-card-text>
-      Asset type: {{post.post.asset_type}}
+      Asset type: {{ post.post.asset_type }}
     </v-card-text>
     <v-card-text>
-      Updated at {{post.post.updated_at}}
+      Updated at {{ post.post.updated_at }}
     </v-card-text>
-    <v-img
-      v-if="post.post.image_url"
-      :src="post.post.image_url"
-      height="200px"
-      cover
-    ></v-img>
-    
-  
+    <v-img v-if="post.post.image_url" :src="post.post.image_url" height="200px" cover></v-img>
+
+
     <v-card-text>
-    <ConfirmDelete @deleteClicked="deleteConfirm"></ConfirmDelete>
-  </v-card-text>
+      <ConfirmDelete @deleteClicked="deleteConfirm"></ConfirmDelete>
+    </v-card-text>
   </v-card>
 </template>
-  <script setup>
+<script setup>
 import { defineProps } from "vue";
 import ConfirmDelete from './ConfirmDelete'
 import { postapi } from "@/api/api";
@@ -55,10 +43,11 @@ const deleteConfirm = async () => {
 
 }
 </script>
-  <style scoped>
+<style scoped>
 .v-list-item-subtitle {
   font-size: 12px;
 }
+
 .v-card {
   border-radius: 12px;
 }

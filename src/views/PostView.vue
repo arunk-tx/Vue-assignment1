@@ -3,15 +3,8 @@
     <v-container>
       <v-row class="d-flex justify-space-between ml-0 mr-0">
         <v-card-text>
-          <v-text-field
-            density="compact"
-            variant="solo"
-            label="Search by author"
-            append-inner-icon="mdi-magnify"
-            single-line
-            hide-details
-            v-model="searchQuery"
-          ></v-text-field>
+          <v-text-field density="compact" variant="solo" label="Search by author" append-inner-icon="mdi-magnify"
+            single-line hide-details v-model="searchQuery"></v-text-field>
         </v-card-text>
         <div class="mt-3 mr-3">
           <v-btn class="mx-2" :to="{ name: 'AddPost' }" :rounded="0" color="primary">
