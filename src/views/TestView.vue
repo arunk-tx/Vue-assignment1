@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import AnsiUp from 'ansi_up'
+//import AnsiUp from 'ansi_up'
 
 export default {
   name: 'shellCon',
@@ -70,9 +70,9 @@ export default {
       this.socket.send('ready')
     }
   },
-  beforeMount() {
-    this.ansi = new AnsiUp()
-  },
+  //beforeMount() {
+   // this.ansi = new AnsiUp()
+  //},
   updated() {
     // auto-scroll to the bottom when the DOM is updated
     this.$el.scrollTop = this.$el.scrollHeight
